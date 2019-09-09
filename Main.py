@@ -5,12 +5,14 @@ from Automata import Automata
 
 def main():
     args, initial_condition = parse_args()
-    automata = Automata(initial_condition(args.iterations), apply_elementary_rule(args.rule_number))
+    # Always multiply the number of evolutions by 2 to get the length of each row. 
+    # This produces cleaner images.
+    automata = Automata(initial_condition(args.evolutions * 2), apply_elementary_rule(args.rule_number))
     automata.evolve(len(automata.state))
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Build elementary cellular automata.") 
-    parser.add_argument('-i', '--iterations', default=32, type=int, help="The number of iterations for the CA.")
+    parser.add_argument('-e', '--evolutions', default=16, type=int, help="The number of evolutions for the CA.")
     parser.add_argument('-r', '--rule_number', default=30, type=int, help="The rule number for the cellular automata.")
     parser.add_argument('-s', '--state', default=0, type=int, help="The initial conditions for the first row.\n0: Middle is *. Other cells are -. (default)\n1: Random initial row\n2:Far right is *. (*). Other cells are -.")
 

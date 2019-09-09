@@ -14,8 +14,8 @@ Build elementary cellular automata.
 
 optional arguments:
   -h, --help            show this help message and exit
-  -i ITERATIONS, --iterations ITERATIONS
-                        The number of iterations for the CA.
+  -i ITERATIONS, --evolutions ITERATIONS
+                        The number of evolutions for the CA.
   -r RULE_NUMBER, --rule_number RULE_NUMBER
                         The rule number for the cellular automata.
   -s STATE, --state STATE
@@ -26,7 +26,7 @@ optional arguments:
 
 ### Example
 ```
-python3 Main.py -i 64 -r 110 -s 2
+python3 Main.py -e 32 -r 110 -s 2
 ---------------------------------------------------------------*
 --------------------------------------------------------------**
 -------------------------------------------------------------***
